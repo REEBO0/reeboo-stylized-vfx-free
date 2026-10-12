@@ -18,6 +18,6 @@ func _on_enemy_hit(hit_position: Vector3) -> void:
   Inspector settings `autoplay`, `auto_free` and `time_scale`.
 - Add a `WorldEnvironment` with Glow enabled for the best look.
 
-Full documentation: https://github.com/<OWNER_ACCOUNT>/reeboo-stylized-vfx-free
+Full documentation: https://github.com/REEBO0/reeboo-stylized-vfx-free
 
 The full pack has 22 more effects: https://reebo0.itch.io/stylized-vfx-godot

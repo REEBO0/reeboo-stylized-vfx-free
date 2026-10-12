@@ -7,6 +7,9 @@ extends Node3D
 
 const EFFECT_DIR := "res://addons/reeboo_vfx/effects/"
 const GROUND_SHADER := preload("res://demo/ground.gdshader")
+## The free sample shows a link to the full pack (hidden when every effect is present).
+const FULL_PACK_EFFECTS := 25
+const FULL_PACK_URL := "https://reebo0.itch.io/stylized-vfx-godot"
 
 ## Camera framing per effect: [look-at height, distance, camera height].
 const FRAMING := {
@@ -225,3 +228,17 @@ func _build_ui() -> void:
 	brand.offset_left = -360
 	brand.offset_right = -32
 	brand.offset_top = 28
+	if effects.size() < FULL_PACK_EFFECTS:
+		var upsell := LinkButton.new()
+		upsell.text = "Free sample: %d of %d effects.  Get the full pack: %s" % [effects.size(), FULL_PACK_EFFECTS, FULL_PACK_URL.trim_prefix("https://")]
+		upsell.uri = FULL_PACK_URL
+		upsell.underline = LinkButton.UNDERLINE_MODE_ON_HOVER
+		upsell.add_theme_font_size_override("font_size", 18)
+		upsell.add_theme_color_override("font_color", Color(1.0, 0.85, 0.4))
+		upsell.add_theme_color_override("font_outline_color", Color(0, 0, 0, 0.7))
+		upsell.add_theme_constant_override("outline_size", 6)
+		ui.add_child(upsell)
+		upsell.set_anchors_preset(Control.PRESET_BOTTOM_LEFT)
+		upsell.offset_left = 34
+		upsell.offset_top = -52
+		upsell.offset_bottom = -24
