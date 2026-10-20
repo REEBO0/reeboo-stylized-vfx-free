@@ -98,8 +98,7 @@ The free sample page is at https://reebo0.itch.io/stylized-vfx-godot-free.
 
 ## How it was made
 
-The shaders and scripts were written with the help of an AI coding assistant. All visuals are
-procedural (rendered by that code), with no AI image generation and no third-party art.
+All visuals are procedural (rendered by the shaders and scripts), with no third-party art.
 
 ## License
 
